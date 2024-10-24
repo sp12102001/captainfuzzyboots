@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadata and Page Title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Captain Fuzzy Boots - Mathematical Sciences | Gossip Girl University</title>
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Include Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* Root Variables for Colors and Spacing */
         :root {
-            --durham-purple: #4B0082;
+            --durham-purple: #5B2677;
             --light-gray: #f5f5f5;
-            --dark-gray: #333;
-            --medium-gray: #666;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
             --spacing: 2rem;
         }
 
+        /* Reset Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Typography and Body Styles */
         body {
-            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: 'Source Sans Pro', sans-serif;
             line-height: 1.6;
             color: var(--dark-gray);
             background-color: white;
         }
 
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -39,6 +52,7 @@
             color: white;
             padding: var(--spacing) 0;
             margin-bottom: var(--spacing);
+            text-align: center;
         }
 
         .header h1 {
@@ -51,7 +65,7 @@
             opacity: 0.9;
         }
 
-        /* Navigation */
+        /* Navigation Styles */
         .nav {
             background-color: white;
             border-bottom: 1px solid #eee;
@@ -64,6 +78,11 @@
             list-style: none;
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav li {
+            margin-right: 1rem;
         }
 
         .nav a {
@@ -78,7 +97,7 @@
             color: var(--durham-purple);
         }
 
-        /* Main Content */
+        /* Main Content Layout */
         .main {
             display: grid;
             grid-template-columns: 3fr 1fr;
@@ -125,6 +144,7 @@
         /* Publication List */
         .publication-list {
             list-style: none;
+            padding-left: 0;
         }
 
         .publication-list li {
@@ -134,38 +154,52 @@
         }
 
         .publication-list li::before {
-            content: "📄";
+            content: "\f15c"; /* Font Awesome file icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
             position: absolute;
             left: 0;
+            color: var(--durham-purple);
         }
 
-        /* Sidebar */
+        /* Sidebar Styles */
         .sidebar {
             background: var(--light-gray);
             padding: var(--spacing);
             border-radius: 4px;
         }
 
-        .contact-info {
-            margin-bottom: var(--spacing);
-        }
-
-        .contact-info i {
-            width: 20px;
+        .sidebar h3 {
+            margin-bottom: 1rem;
             color: var(--durham-purple);
         }
 
-        /* Footer */
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: var(--durham-purple);
+        }
+
+        /* Footer Styles */
         .footer {
             background: var(--dark-gray);
             color: white;
             padding: var(--spacing) 0;
             margin-top: var(--spacing);
+            text-align: center;
         }
 
         /* Utility Classes */
         .education-item {
             margin-bottom: 1.5rem;
+        }
+
+        .education-item h3 {
+            margin-bottom: 0.5rem;
+            color: var(--medium-gray);
         }
 
         .date {
@@ -186,6 +220,7 @@
             text-decoration: none;
             border-radius: 4px;
             transition: opacity 0.3s;
+            margin-top: 1rem;
         }
 
         .btn:hover {
@@ -206,9 +241,28 @@
             border-radius: 15px;
             font-size: 0.9rem;
         }
+
+        /* PDF Embed Styles */
+        .pdf-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .pdf-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
         <div class="container">
             <h1>Captain Fuzzy Boots</h1>
@@ -217,6 +271,7 @@
         </div>
     </header>
 
+    <!-- Navigation Bar -->
     <nav class="nav">
         <div class="container">
             <ul>
@@ -229,9 +284,12 @@
         </div>
     </nav>
 
+    <!-- Main Content Area -->
     <div class="container">
         <main class="main">
+            <!-- Left Content Area -->
             <div class="content">
+                <!-- About Section -->
                 <section id="about" class="section">
                     <h2>About</h2>
                     <p>I am a PhD candidate in Mathematics at Gossip Girl University, working under the supervision of Professor Dorota Kishlovsky and Dr. Rufus Humphrey. My research interests lie at the intersection of geometry, dynamics, spectral theory, and number theory.</p>
@@ -245,6 +303,7 @@
                     </div>
                 </section>
 
+                <!-- Research Section -->
                 <section id="research" class="section">
                     <h2>Current Research</h2>
                     <div class="research-item">
@@ -263,6 +322,7 @@
                     </div>
                 </section>
 
+                <!-- Publications Section -->
                 <section id="publications" class="section">
                     <h2>Publications & Preprints</h2>
                     <ul class="publication-list">
@@ -279,14 +339,15 @@
                     </ul>
                 </section>
 
+                <!-- Teaching Section -->
                 <section id="teaching" class="section">
                     <h2>Teaching Experience</h2>
                     <div class="education-item">
                         <h3>Complex Analysis Homework Marker</h3>
                         <p>Gossip Girl University (2021 - Present)</p>
                         <ul>
-                            <li>Grade assignments for second-year students</li>
-                            <li>Provide detailed feedback on mathematical concepts</li>
+                            <li>Graded assignments for second-year students</li>
+                            <li>Provided detailed feedback on mathematical concepts</li>
                         </ul>
                     </div>
 
@@ -294,21 +355,36 @@
                         <h3>Mathematics Tutor</h3>
                         <p>Levelling Up Tutoring Program (2021 - Present)</p>
                         <ul>
-                            <li>Tutor high school students in advanced mathematics</li>
-                            <li>Provide university application guidance</li>
+                            <li>Tutored high school students in advanced mathematics</li>
+                            <li>Provided university application guidance</li>
                         </ul>
                     </div>
                 </section>
+
+                <!-- CV Section -->
+                <section id="cv" class="section">
+                    <h2>Curriculum Vitae</h2>
+                    <p>You can view my full CV below:</p>
+                    <!-- PDF Embed -->
+                    <div class="pdf-container">
+                        <iframe src="https://docs.google.com/gview?url=https://tvwriting.co.uk/tv_scripts/Collections/Drama/Gossip_Girl/Gossip_Girl_1x01_-Pilot.pdf&embedded=true"></iframe>
+                    </div>
+                    <!-- Alternatively, for direct PDF embedding (may not work in all browsers) -->
+                    <!-- <embed src="https://tvwriting.co.uk/tv_scripts/Collections/Drama/Gossip_Girl/Gossip_Girl_1x01_-Pilot.pdf" type="application/pdf" width="100%" height="600px" /> -->
+                </section>
             </div>
 
+            <!-- Sidebar Area -->
             <aside class="sidebar">
+                <!-- Contact Information -->
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> captainfuzzyboots@Gossip Girl.ac.uk</p>
+                    <p><i class="fas fa-envelope"></i> captainfuzzyboots@GossipGirl.ac.uk</p>
                     <p><i class="fas fa-building"></i> Department of Mathematical Sciences</p>
                     <p><i class="fas fa-map-marker-alt"></i> Gossip Girl University, UK</p>
                 </div>
 
+                <!-- Education Background -->
                 <div class="education-background">
                     <h3>Education</h3>
                     <p><strong>PhD in Mathematics</strong><br>
@@ -320,6 +396,7 @@
                     2018 - 2022</p>
                 </div>
 
+                <!-- Awards -->
                 <div class="awards">
                     <h3>Recent Awards</h3>
                     <ul>
@@ -331,40 +408,11 @@
         </main>
     </div>
 
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
             <p>© 2024 Captain Fuzzy Boots | Department of Mathematical Sciences, Gossip Girl University</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Sticky navigation handling
-        const nav = document.querySelector('.nav');
-        const navTop = nav.offsetTop;
-
-        function fixNav() {
-            if (window.scrollY >= navTop) {
-                document.body.style.paddingTop = nav.offsetHeight + 'px';
-                document.body.classList.add('fixed-nav');
-            } else {
-                document.body.style.paddingTop = 0;
-                document.body.classList.remove('fixed-nav');
-            }
-        }
-
-        window.addEventListener('scroll', fixNav);
-    </script>
 </body>
 </html>
-          </body>
-        </html>
